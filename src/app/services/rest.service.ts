@@ -21,14 +21,19 @@ export class RestService {
       .catch(this.handleError);
   };
 
-  getPatient(): Promise<any> {
+  getPatients(): Promise<any> {
     return this.http.get(this.server + "patient")
       .toPromise().then(response => response)
       .catch(this.handleError);
   };
 
+<<<<<<< HEAD
   getAppointment(id : string): Promise<any> {
     return this.http.get(this.server + "appointment?participant.actor.reference=Practitioner/"+ id)
+=======
+  getPatient(id : String): Promise<any> {
+    return this.http.get(this.server + "patient/"+id)
+>>>>>>> 840874440323614bbc6d28d9a9c8d01ab01c5071
       .toPromise().then(response => response)
       .catch(this.handleError);
   };

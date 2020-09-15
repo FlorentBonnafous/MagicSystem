@@ -11,7 +11,8 @@ export interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard',     title: 'Accueil',           icon:'nc-bank',       class: '' },
     { path: '/maps',          title: 'Diagnostic',        icon:'nc-paper',      class: '' },
-    { path: '/notifications', title: 'RDV',               icon:'nc-calendar-60',class: '' }
+    { path: '/notifications', title: 'RDV',               icon:'nc-calendar-60',class: '' },
+    { path: '/user', title: 'Mon Profil',        icon:'nc-single-02',class: '' }
 ];
 
 @Component({

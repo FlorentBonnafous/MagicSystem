@@ -15,8 +15,8 @@ export class RestService {
     return new HttpHeaders({'Content-Type': 'application/json'});
   };
 
-  getUsers(): Promise<any> {
-    return this.http.get(this.server + "practitioner")
+  getUsers(id : string): Promise<any> {
+    return this.http.get(this.server + "practitioner/" + id)
       .toPromise().then(response => response)
       .catch(this.handleError);
   };

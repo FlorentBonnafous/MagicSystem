@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from '../../services/rest.service';
 
 @Component({
     selector: 'user-cmp',
@@ -7,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class UserComponent implements OnInit{
+    public users : any;
+
+
+    constructor(private service: RestService) {
+        service.getUsers("magicSystem2020").then(users => {
+            this.users = users;
+            console.log(this.users.qualification[0].code.coding[0].display);
+          });
+    }
     ngOnInit(){
     }
 }

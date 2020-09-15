@@ -11,10 +11,6 @@ export class RestService {
 
   constructor(private http: HttpClient) { };
 
-  private getHeaders(): HttpHeaders {
-    return new HttpHeaders({'Content-Type': 'application/json'});
-  };
-
   getUsers(id : string): Promise<any> {
     return this.http.get(this.server + "practitioner/" + id)
       .toPromise().then(response => response)
@@ -27,20 +23,21 @@ export class RestService {
       .catch(this.handleError);
   };
 
-<<<<<<< HEAD
-  getAppointment(id : string): Promise<any> {
-    return this.http.get(this.server + "appointment?participant.actor.reference=Practitioner/"+ id)
-=======
-  getPatient(id : String): Promise<any> {
+  getPatient(id:String): Promise<any> {
     return this.http.get(this.server + "patient/"+id)
->>>>>>> 840874440323614bbc6d28d9a9c8d01ab01c5071
       .toPromise().then(response => response)
       .catch(this.handleError);
   };
 
-  postObservation(id:String, value: any){
-    return this.http.post(this.server + "patient/"+id,{
-      headers : this.getHeaders
+  getAppointment(id : string): Promise<any> {
+    return this.http.get(this.server + "appointment?participant.actor.reference=Practitioner/"+ id)
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  };
+
+  postObservation(observation: any){
+    return this.http.post(this.server + "observation",observation,{
+      headers : {'Content-Type': 'application/json'}
     })
       .toPromise().then(response => response)
       .catch(this.handleError);

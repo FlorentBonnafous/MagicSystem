@@ -21,8 +21,14 @@ export class RestService {
       .catch(this.handleError);
   };
 
-  getPatient(): Promise<any> {
+  getPatients(): Promise<any> {
     return this.http.get(this.server + "patient")
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  };
+
+  getPatient(id : String): Promise<any> {
+    return this.http.get(this.server + "patient/"+id)
       .toPromise().then(response => response)
       .catch(this.handleError);
   };

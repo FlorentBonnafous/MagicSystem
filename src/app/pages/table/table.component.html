@@ -36,7 +36,7 @@
                 </td>
                 <td>{{patient.gender}}</td>
                 <td>
-                  <a href="#" class="btn btn-info"><i class="nc-icon nc-alert-circle-i"></i> Details</a>
+                  <a [routerLink]="['/patient', patient.id]" class="btn btn-info"><i class="nc-icon nc-alert-circle-i"></i> Details</a>
                 </td>
               </tr>
             </tbody>

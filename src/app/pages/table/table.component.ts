@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
+import { RestService } from '../../services/rest.service';
 
 declare interface TableData {
     headerRow: string[];
@@ -13,8 +14,17 @@ declare interface TableData {
 })
 
 export class TableComponent implements OnInit{
+    public  patients : any;
     public tableData1: TableData;
     public tableData2: TableData;
+
+    constructor(private service: RestService) {
+        service.getPatient().then(patients => {
+            this.patients = patients;
+            console.log(this.patients);
+          });
+    }
+    
     ngOnInit(){
         this.tableData1 = {
             headerRow: [ 'ID', 'Nom', 'Prenom', 'Téléphone', 'Adresse','Options'],

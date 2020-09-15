@@ -9,22 +9,35 @@
           <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Prenom</th>
                 <th scope="col">Téléphone</th>
-                <th scope="col">Adresse</th>
+                <th scope="col">Genre</th>
                 <th scope="col">Options</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
+              <tr *ngFor="let patient of patients">
+                <td>{{patient.id}}</td>
+                <td>
+                  <div *ngIf="patient.name.length!=0">{{patient.name[0].family}}</div>
+                  <div *ngIf="patient.name.length==0">#Any</div>
+                </td>
+                <td>
+                  <div *ngIf="patient.name.length!=0">
+                    <div *ngIf="patient.name[0].given.length!=0">{{patient.name[0].given[0]}}</div>
+                    <div *ngIf="patient.name[0].given.length==0">#Any</div>
+                  </div>
+                  <div *ngIf="patient.name.length==0">#Any</div>
+                </td>
+                <td>
+                  <div *ngIf="patient.telecom?.length>0"> {{patient.telecom[0].value}}</div>
+                </td>
+                <td>{{patient.gender}}</td>
+                <td>
+                  <a href="#" class="btn btn-info"><i class="nc-icon nc-alert-circle-i"></i> Details</a>
+                </td>
               </tr>
             </tbody>
           </table>

@@ -27,6 +27,12 @@ export class RestService {
       .catch(this.handleError);
   };
 
+  getAppointment(id : string): Promise<any> {
+    return this.http.get(this.server + "appointment?participant.actor.reference=Practitioner/"+ id)
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  };
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);

@@ -18,7 +18,43 @@ export class MapsComponent implements OnInit {
             let dateObs = form.value.dateObs;
             let nbBattement = form.value.nbBattement;
             let textObs = form.value.textObs;
-            //création du json
-        }
-    }
 
+            //création du json
+            let x = {
+            "resourceType" : "Observation",
+            "status" : "<code>",
+            "category": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                      "code": "vital-signs",
+                      "display": "Vital Signs"
+                    }
+                  ],
+                  "text": "Vital Signs"
+                }
+              ],
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "9279-1",
+                    "display": TypeOBS
+                  }
+                ],
+                "text": textObs
+              },
+              "subject": {
+                "reference": "Patient/IDduPatient"
+              },
+              "effectiveDateTime": dateObs,
+              "valueQuantity": {
+                "value": nbBattement,
+                "unit": "breaths/minute",
+                "system": "http://unitsofmeasure.org",
+                "code": "/min"
+              }            
+        };
+    }
+}

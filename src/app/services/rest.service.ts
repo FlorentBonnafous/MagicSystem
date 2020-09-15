@@ -38,6 +38,14 @@ export class RestService {
       .catch(this.handleError);
   };
 
+  postObservation(id:String, value: any){
+    return this.http.post(this.server + "patient/"+id,{
+      headers : this.getHeaders
+    })
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);

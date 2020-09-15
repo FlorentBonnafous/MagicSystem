@@ -10,8 +10,13 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard',     title: 'Accueil',           icon:'nc-bank',       class: '' },
+<<<<<<< Updated upstream
     { path: '/maps',          title: 'Diagnostic',        icon:'nc-paper',      class: '' },
     { path: '/upgrade', title: 'RDV',               icon:'nc-calendar-60',class: '' },
+=======
+    { path: '/maps',          title: 'Observations',        icon:'nc-paper',      class: '' },
+    { path: '/notifications', title: 'RDV',               icon:'nc-calendar-60',class: '' },
+>>>>>>> Stashed changes
     { path: '/user', title: 'Mon Profil',        icon:'nc-single-02',class: '' }
 ];
 

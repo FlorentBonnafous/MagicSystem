@@ -9,10 +9,5 @@ import { RestService } from './services/rest.service';
 
 export class AppComponent{
   patients : any;
-  constructor(private service: RestService) {
-    service.getPatient().then(patients => {
-      this.patients = patients;
-      console.log(this.patients);
-    });
-  }
+  constructor(private service: RestService) {}
 }

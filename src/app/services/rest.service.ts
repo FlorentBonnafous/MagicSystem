@@ -55,7 +55,7 @@ getObservation(id:String): Promise<any> {
   };
 
   postObservation(observation: any){
-    return this.http.post(this.server + "observation",observation,{
+    return this.http.post(this.server + "observation?performer.reference=practitioner/magicSystem2020",observation,{
       headers : {'Content-Type': 'application/json'}
     })
       .toPromise().then(response => response)

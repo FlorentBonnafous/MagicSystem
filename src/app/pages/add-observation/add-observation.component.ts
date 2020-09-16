@@ -82,7 +82,7 @@ export class AddObservationComponent implements OnInit {
       '<span data-notify="icon" class="nc-icon nc-bell-55"></span><span data-notify="message">Bienvenue chez <b>Magic System</b> - Le patient a été informé de vos observations.</span>',
       "",
       {
-        timeOut: 4000,
+        timeOut: 10000,
         closeButton: true,
         enableHtml: true,
         toastClass: "alert alert-success alert-with-icon"

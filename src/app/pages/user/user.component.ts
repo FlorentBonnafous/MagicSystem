@@ -14,7 +14,6 @@ export class UserComponent implements OnInit{
     constructor(private service: RestService) {
         service.getUsers("magicSystem2020").then(users => {
             this.users = users;
-            console.log(this.users.qualification[0].code.coding[0].display);
           });
     }
     ngOnInit(){

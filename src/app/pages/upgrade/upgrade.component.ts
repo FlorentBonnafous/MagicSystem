@@ -8,17 +8,30 @@ import { RestService } from '../../services/rest.service';
     templateUrl: 'upgrade.component.html'
 })
 
-export class UpgradeComponent implements OnInit{
+export class UpgradeComponent implements OnInit {
 
-    public appointment : any;
+    public appointments: any;
+    public date : any;
+    public heure: any;
 
     constructor(private service: RestService) {
-        service.getAppointment("magicSystem2020").then(appointment => {
-            this.appointment = appointment;
-            console.log(this.appointment);
-          });
+        service.getAppointments("magicSystem2020").then(appointments => {
+            this.appointments = appointments;
+            for (let appointment of appointments) {
+                let str = appointment.participant[1].actor.reference;
+                let idPatient = str.split("/");
+                let start = appointment.start;
+                let reelDate = start.split("T");
+                this.date = reelDate[0];
+                this.heure = reelDate[1];
+                service.getPatient(idPatient[1]).then(patient => {
+                    appointment.patient = patient;
+                })
+            }
+            console.log(appointments);
+        });
     }
 
-    ngOnInit(){
+    ngOnInit() {
     }
 }

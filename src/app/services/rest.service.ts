@@ -35,6 +35,12 @@ export class RestService {
       .catch(this.handleError);
   };
 
+  getObservations(): Promise<any> {
+    return this.http.get(this.server + "observation")
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  };
+
   postObservation(observation: any){
     return this.http.post(this.server + "observation",observation,{
       headers : {'Content-Type': 'application/json'}

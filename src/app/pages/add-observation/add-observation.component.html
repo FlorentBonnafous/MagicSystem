@@ -1,4 +1,5 @@
 <div class="row">
+<<<<<<< Updated upstream
   <div class="col-md-12">
     <div class="card card-user">
       <div class="card-header">
@@ -50,6 +51,60 @@
                 ngModel
                 name="nbBattement"
                 id="nbBattement">
+=======
+    <div class="col-md-12">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Nouvelle Observation</h5>
+        </div>
+        <div class="card-body">
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+            <div class="row">
+            <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Nom du Patient</label>
+                  <input type="text" 
+                  ngModel
+                  class="form-control" 
+                  placeholder="{{patient.name[0].family}} {{patient.name[0].given[0]}}" 
+                  name="NomPatient"
+                  id="NomPatient" disabled>
+                </div>
+              </div>
+              <div class="col-md-8 pl-1">
+                <div class="form-group">
+                  <label class="control-label" for="date">Date</label>
+                  <input class="form-control"
+                   ngModel
+                   id="dateObs" 
+                   name="dateObs" 
+                   type="date" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label for="inlineFormCustomSelectPref">Type d'observation</label>
+                  <select class="form-control" id="inlineFormCustomSelectPref" 
+                  ngModel
+                  name="TypeOBS"
+                  id="TypeOBS">
+                    <option value="respiratory-rate" selected>respiratory-rate</option>
+                    <option value="option">Option future 2</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 px-1">
+                <div class="form-group">
+                  <label>Nombre de battement</label>
+                  <input type="number" class="form-control" 
+                  ngModel
+                  name="nbBattement"
+                  placeholder="0"
+                  id="nbBattement">
+                </div>
+>>>>>>> Stashed changes
               </div>
             </div>
           </div>
@@ -64,6 +119,7 @@
                 ></textarea>
               </div>
             </div>
+<<<<<<< Updated upstream
           </div>
           <div class="row">
             <div class="update ml-auto mr-auto" routerLinkActive="active">
@@ -71,6 +127,15 @@
             </div>
           </div>
         </form>
+=======
+            <div class="row">
+              <div class="update ml-auto mr-auto" routerLinkActive="active">
+                <button class="btn btn-primary" type="submit">Valider</button>
+              </div>
+            </div>
+          </form>
+        </div>
+>>>>>>> Stashed changes
       </div>
     </div>
   </div>

@@ -37,6 +37,12 @@ export class RestService {
 
   getAppointment(id : string): Promise<any> {
     return this.http.get(this.server + "appointment/"+ id)
+    .toPromise().then(response => response)
+    .catch(this.handleError);
+};
+    
+  getObservations(): Promise<any> {
+    return this.http.get(this.server + "observation")
       .toPromise().then(response => response)
       .catch(this.handleError);
   };

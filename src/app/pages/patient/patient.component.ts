@@ -10,9 +10,9 @@ import { RestService } from 'app/services/rest.service';
 export class PatientComponent implements OnInit {
   patient : any;
   constructor(private activatedRoute: ActivatedRoute, private service: RestService) {
+    
     service.getPatient(this.activatedRoute.snapshot.params['id']).then(patient => {
       this.patient = patient;
-      console.log(this.patient);
     });
     
    }

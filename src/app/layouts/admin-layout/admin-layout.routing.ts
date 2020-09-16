@@ -8,7 +8,7 @@ import { IconsComponent } from '../../pages/icons/icons.component';
 import { MapsComponent } from '../../pages/maps/maps.component';
 import { NotificationsComponent } from '../../pages/notifications/notifications.component';
 import { PatientComponent } from '../../pages/patient/patient.component';
-import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
+import { ObservationComponent } from '../../pages/observation/observation.component';
 import { AddObservationComponent } from '../../pages/add-observation/add-observation.component';
 
 export const AdminLayoutRoutes: Routes = [
@@ -20,6 +20,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
-    { path: 'upgrade',        component: UpgradeComponent },
+    { path: 'observation',        component: ObservationComponent },
     {path: 'AddObservation/:id',  component: AddObservationComponent }
 ];

@@ -15,6 +15,8 @@ import { IconsComponent }           from '../../pages/icons/icons.component';
 import { MapsComponent }            from '../../pages/maps/maps.component';
 import { NotificationsComponent }   from '../../pages/notifications/notifications.component';
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
+import { ObservationComponent }     from '../../pages/observation/observation.component';
+
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -35,7 +37,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MapsComponent,
     NotificationsComponent,
     AddObservationComponent,
-    PatientComponent
+    PatientComponent,
+    ObservationComponent
   ]
 })
 

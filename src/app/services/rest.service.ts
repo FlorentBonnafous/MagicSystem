@@ -42,7 +42,7 @@ export class RestService {
 };
     
   getObservations(): Promise<any> {
-    return this.http.get(this.server + "observation")
+    return this.http.get(this.server + "observation?performer.reference=practitioner/magicSystem2020")
       .toPromise().then(response => response)
       .catch(this.handleError);
   };

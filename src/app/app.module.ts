@@ -18,7 +18,6 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { RestService } from './services/rest.service';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

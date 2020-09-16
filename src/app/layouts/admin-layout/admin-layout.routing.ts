@@ -12,6 +12,7 @@ import { ObservationComponent} from '../../pages/observation/observation.compone
 import { AddObservationComponent } from '../../pages/add-observation/add-observation.component'
 import { PatientComponent } from '../../pages/patient/patient.component'
 import { InfoRDVComponent } from '../../pages/info-rdv/info-rdv.component';
+import { ObservationDetailsComponent }     from '../../pages/observation-details/observation-details.component';
 import { from } from 'rxjs';
 
 export const AdminLayoutRoutes: Routes = [
@@ -26,6 +27,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'observation',  component: ObservationComponent },
     { path: 'AddObservation/:id',        component: AddObservationComponent },
     { path: 'patient/:id',        component: PatientComponent },
-    { path: 'infoRDV/:id',        component: InfoRDVComponent }
-
+    { path: 'infoRDV/:id',        component: InfoRDVComponent },
+    { path: 'detailsObservation/:id',  component: ObservationDetailsComponent }
 ];

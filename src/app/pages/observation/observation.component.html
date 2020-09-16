@@ -13,6 +13,7 @@
                     <th scope="col">Date</th>
                     <th scope="col">Status</th>
                     <th scope="col">Nombre de battement</th>
+                    <th scope="col">Options</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -21,6 +22,9 @@
                     <td>{{observation.effectiveDateTime}}</td>
                     <td>{{observation.status}}</td>
                     <td>{{observation.valueQuantity.value}} {{observation.valueQuantity.unit}}</td>
+                    <td>
+                      <a [routerLink]="['/detailsObservation', observation.id]" class="btn btn-info"><i class="nc-icon nc-alert-circle-i"></i> Details</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>

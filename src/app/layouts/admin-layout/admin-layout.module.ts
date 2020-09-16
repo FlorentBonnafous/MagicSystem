@@ -17,6 +17,7 @@ import { NotificationsComponent }   from '../../pages/notifications/notification
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
 import { InfoRDVComponent } from '../../pages/info-rdv/info-rdv.component';
 import { ObservationComponent }     from '../../pages/observation/observation.component';
+import { ObservationDetailsComponent }     from '../../pages/observation-details/observation-details.component';
 
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,6 +30,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   declarations: [
+    ObservationDetailsComponent,
     InfoRDVComponent,
     DashboardComponent,
     UserComponent,

@@ -15,6 +15,8 @@ export class UserComponent implements OnInit{
         service.getUsers("magicSystem2020").then(users => {
             this.users = users;
           });
+
+          console.log(localStorage.getItem('user'))
     }
     ngOnInit(){
     }

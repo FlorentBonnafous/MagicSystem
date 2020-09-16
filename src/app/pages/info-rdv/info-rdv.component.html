@@ -45,35 +45,41 @@
                                 <input type="text" class="form-control" placeholder="Indefini" value="{{heure}}" disabled>
                             </div>
                         </div>
-                        <div class="col-md-6 px-1">
+                        <div class="col-md-8 pl-1">
                             <div class="form-group">
                                 <label>Description</label>
                                 <input type="text" class="form-control" placeholder="Indefini" value="{{appointment.description}}" disabled>
                             </div>
                         </div>
-                        <div class="col-md-2 pl-1">
-                            <div class="form-group">
-                                <label>Date de la demande</label>
-                                <input type="text" class="form-control" placeholder="Indefini" value="{{appointment.created}}" disabled>
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 pr-1">
+                        <div class="col-md-2 pr-1">
+                            <div class="form-group">
+                                <label>Genre du patient</label>
+                                <input type="text" class="form-control" placeholder="Indefini" value="{{appointment.patient.gender}}" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-2 px-1">
+                            <div class="form-group">
+                                <label>Date de naissance</label>
+                                <input type="text" class="form-control" placeholder="Indefini" value="{{appointment.patient.birthDate}}" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-8 pl-1">
                             <div class="form-group">
                                 <label>Adresse</label>
-                                <input type="text" class="form-control" placeholder="Indefini" value="Indefini" disabled>
-                            </div>
-                        </div>
-                        <div class="col-md-6 px-1">
-                            <div class="form-group">
-                                <label>Téléphone</label>
-                                <input type="text" class="form-control" placeholder="Indefini" value="{{patient.telecom[0].value}}" disabled>
+                                <input type="text" class="form-control" placeholder="Indefini" value="{{appointment.patient.address[0].line[0]}} , {{appointment.patient.address[0].city}}" disabled>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                    </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Commentaire</label>
+                            <input type="text" class="form-control textarea" placeholder="Indefini" value="{{appointment.comment}}" disabled>
+                          </div>
+                        </div>
+                      </div>
                 </form>
             </div>
         </div>

@@ -17,8 +17,9 @@ export class UpgradeComponent implements OnInit {
     constructor(private service: RestService) {
         service.getAppointments("magicSystem2020").then(appointments => {
             this.appointments = appointments;
+            console.log(appointments);
             for (let appointment of appointments) {
-                let str = appointment.participant[1].actor.reference;
+                let str = appointment.participant[0].actor.reference;
                 let idPatient = str.split("/");
                 let start = appointment.start;
                 let reelDate = start.split("T");

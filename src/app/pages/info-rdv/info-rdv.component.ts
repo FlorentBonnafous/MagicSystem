@@ -16,7 +16,7 @@ export class InfoRDVComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,private service: RestService) {
       service.getAppointment(this.activatedRoute.snapshot.params['id']).then(appointment => {
           this.appointment = appointment;
-          let str = appointment.participant[1].actor.reference;
+          let str = appointment.participant[0].actor.reference;
           let idPatient = str.split("/");
           let start = appointment.start;
           let reelDate = start.split("T");

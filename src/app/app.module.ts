@@ -12,10 +12,10 @@ import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
 
+
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 import { RestService } from './services/rest.service';
-
 
 @NgModule({
   declarations: [
@@ -23,10 +23,10 @@ import { RestService } from './services/rest.service';
     AdminLayoutComponent
   ],
   imports: [
-    BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes,{
       useHash: true
     }),
+    BrowserAnimationsModule,
     SidebarModule,
     NavbarModule,
     ToastrModule.forRoot(),

@@ -16,7 +16,7 @@
                 <div class="col-md-3 px-1">
                   <div class="form-group">
                     <label>Nom</label>
-                    <input type="text" class="form-control" placeholder="Indefin" value="{{patient.name[0].family}}" disabled>
+                    <input type="text" class="form-control" placeholder="Indefini" value="{{patient.name[0].family}}" disabled>
                   </div>
                 </div>
                 <div class="col-md-4 pl-1">
@@ -55,8 +55,8 @@
                 </div>
               </div>
               <div class="row">
-                <div class="update ml-auto mr-auto">
-                  <button type="submit" class="btn btn-primary btn-round">Créer une observation</button>
+                <div class="update ml-auto mr-auto" routerLinkActive="active">
+                  <button [routerLink]="['/AddObservation', patient.id]" class="btn btn-primary btn-round">Créer une observation</button>
                 </div>
               </div>
             </form>

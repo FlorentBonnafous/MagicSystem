@@ -1,1 +1,35 @@
-<p>observation works!</p>
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Liste des Observations</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Nom du Patient</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Type d'Observation</th>
+                    <th scope="col">Nombre de battement</th>
+                    <th scope="col">Observation du médecin</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let observation of observations">
+                    <td>{{observation?.effectiveDateTime}}
+                    </td>
+                    <td>{{observation.effectiveDateTime}}</td>
+                    <td>
+                      <div *ngIf="patient.telecom?.length>0"> {{patient.telecom[0].value}}</div>
+                    </td>
+                    <td>{{patient.gender}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>

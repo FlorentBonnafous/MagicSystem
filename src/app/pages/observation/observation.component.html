@@ -2,26 +2,27 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title"> Liste des Observations</h4>
+          <h4 class="card-title"> Liste des rapports de résultats d'analyse</h4>
         </div>
         <div class="card-body">
             <div class="table-responsive">
               <table class="table">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">Nom du Patient</th>
+                    <th scope="col">ID de l'observation</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
                     <th scope="col">Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Nombre de battement</th>
                     <th scope="col">Options</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let observation of observations">
                     <td>{{observation.id}}</td>
+                    <td>{{observation.patient.name[0].family}}</td>
+                    <td>{{observation.patient.name[0].given[0]}}</td>
                     <td>{{observation.effectiveDateTime}}</td>
-                    <td>{{observation.status}}</td>
-                    <td>{{observation.valueQuantity.value}} {{observation.valueQuantity.unit}}</td>
+                    
                     <td>
                       <a [routerLink]="['/detailsObservation', observation.id]" class="btn btn-info"><i class="nc-icon nc-alert-circle-i"></i> Details</a>
                     </td>

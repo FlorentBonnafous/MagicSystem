@@ -9,11 +9,24 @@ import { RestService } from 'app/services/rest.service';
 })
 export class ObservationDetailsComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute,private service: RestService) { 
+  public observation: any;
+
+  constructor(private activatedRoute: ActivatedRoute,private service: RestService) {
     
-  }
+}
 
   ngOnInit(): void {
+    this.service.getObservation(this.activatedRoute.snapshot.params['id']).then(observation => {
+      this.observation = observation;
+      console.log("caca", this.observation);
+      console.log("caca2", observation.category[0].text);
+      let str = observation.subject.reference;
+      let idPatient = str.split("/");
+      this.service.getPatient(idPatient[1]).then(patient => {
+        observation.patient = patient;
+        console.log("caca3", this.observation);
+      })   
+  });
   }
 
 }

@@ -9,15 +9,22 @@ import { RestService } from 'app/services/rest.service';
 export class ObservationComponent implements OnInit {
   public  observations : any;
   public  patients : any;
+  public date : any;
+  public heure: any;
 
   constructor(private service: RestService) { 
-    service.getObservations().then(observations => {
-      console.log(observations.performer)     
+    service.getObservations().then(observations => {   
       this.observations = observations;
-      console.log(this.observations);
-    });
-
-  }
+      console.log(observations);
+      for (let observation of observations) {
+        let str = observation.subject.reference;
+        let idPatient = str.split("/");
+        service.getPatient(idPatient[1]).then(patient => {
+            observation.patient = patient;
+        })
+    }
+});
+}
 
   ngOnInit(): void {
   }

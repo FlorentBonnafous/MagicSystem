@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { RestService } from 'app/services/rest.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-observation',
@@ -11,7 +13,7 @@ import { RestService } from 'app/services/rest.service';
 export class AddObservationComponent implements OnInit {
   patient : any;
   
-  constructor(private activatedRoute: ActivatedRoute, private service: RestService) {
+  constructor(private toastr: ToastrService,private activatedRoute: ActivatedRoute, private service: RestService, private router: Router) {
     
     service.getPatient(this.activatedRoute.snapshot.params['id']).then(patient => {
       this.patient = patient;
@@ -24,20 +26,14 @@ export class AddObservationComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-      //console.log(form);
-      let TypeOBS = form.value.TypeOBS;
-      let dateObs = form.value.dateObs;
-      let nbBattement = parseInt(form.value.nbBattement);
-      let textObs = form.value.textObs;
-
       //création du json
       let observation = {
         "resourceType": "Observation",
         "performer":[
           {
-            "actor":{
+            
               "reference" : "practitioner/magicSystem2020"
-            }
+           
           }
         ],
         "meta": {
@@ -80,10 +76,21 @@ export class AddObservationComponent implements OnInit {
         }
       };
 
-      
+  this.toastr.success(
+    '<span data-notify="icon" class="nc-icon nc-bell-55"></span><span data-notify="message">Bienvenue chez <b>Magic System</b> - Le patient a été informé de vos observations.</span>',
+    "",
+    {
+      timeOut: 4000,
+      closeButton: true,
+      enableHtml: true,
+      toastClass: "alert alert-success alert-with-icon"
+    }
+  );
+
+  this.router.navigateByUrl('/observation');
+
   this.service.postObservation(observation).then(result =>{
-    console.log(result);
-  })
+  })  
 }
 
 }

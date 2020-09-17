@@ -75,7 +75,7 @@ export class AddObservationComponent implements OnInit {
           "code": "/min"
         }
       };
-
+     // console.log(form.value.textObs)
 
   this.service.postObservation(observation).then(result =>{
     this.toastr.success(
@@ -90,6 +90,7 @@ export class AddObservationComponent implements OnInit {
     );
     this.router.navigateByUrl('/observation');
   })  
+
 }
 
 }
